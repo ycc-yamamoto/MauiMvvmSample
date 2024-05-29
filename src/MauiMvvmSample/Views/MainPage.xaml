@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="using:MauiMvvmSample.ViewModels"
+             xmlns:controls="using:MauiMvvmSample.Controls"
+             x:Class="MauiMvvmSample.Views.MainPage"
+             x:DataType="vm:MainPageViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="{Binding Path=Since, Mode=OneWay, StringFormat='Time since launch: {0:%s} sec'}"/>
+
+            <Entry Text="{Binding Path=InputText, Mode=TwoWay}"
+                   Placeholder="Converts the input string to upper case."
+                   HorizontalOptions="Fill"/>
+
+            <Label Text="{Binding Path=UpperCaseText, Mode=OneWay}"/>
+
+            <Entry Text="{Binding Path=ProfileName, Mode=TwoWay}"
+                   Placeholder="Profile name"
+                   HorizontalOptions="Fill"/>
+
+            <DatePicker Date="{Binding Path=ProfileBirthday, Mode=TwoWay}"/>
+
+            <Button Text="Add"
+                    Command="{Binding Path=AddProfileCommand}"/>
+
+            <Entry Text="{Binding Path=ProfileListTitle, Mode=TwoWay}"
+                   Placeholder="Profile List Title"
+                   HorizontalOptions="Fill"/>
+
+            <controls:ProfileList Title="{Binding Path=ProfileListTitle, Mode=OneWay}"
+                                  ItemsSource="{Binding Path=Profiles, Mode=OneWay}"
+                                  Width="100"
+                                  Height="100"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

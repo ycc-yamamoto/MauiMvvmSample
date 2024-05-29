@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="using:MauiMvvmSample.ViewModels"
+             x:Class="MauiMvvmSample.Controls.ProfileList">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               x:Name="TitleLabel"/>
+
+        <CollectionView Grid.Row="1"
+                        x:Name="ProfileCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="vm:ProfileViewModel">
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="{Binding Path=Id, Mode=OneWay}"
+                               TextColor="Gray"
+                               FontSize="10"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   Text="{Binding Path=Name, Mode=OneWay}"
+                                   FontSize="12"
+                                   HorizontalOptions="Start"/>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Path=Birthday, Mode=OneWay, StringFormat='{0:yyyy-MM-dd}'}"
+                                   FontSize="11"
+                                   HorizontalOptions="End"/>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentView>

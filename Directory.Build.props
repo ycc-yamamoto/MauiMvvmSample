@@ -1,0 +1,15 @@
+<Project>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile> <!-- trueの場合はpublicなクラスやメソッドなどにXMLドキュメントが必須 -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors> <!-- すべての警告をエラーとして扱います。 -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn> <!-- ここに警告として扱わない項目を指定 -->
+    <WarningsNotAsErrors>CA1812;</WarningsNotAsErrors> <!-- ここにエラーとして扱わない警告を指定 -->
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio> <!-- Visual Studio でのビルドを高速化します。 -->
+  </PropertyGroup>
+</Project>
