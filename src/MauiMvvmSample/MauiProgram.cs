@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
+using MauiMvvmSample.Services;
 using MauiMvvmSample.ViewModels;
 using MauiMvvmSample.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
@@ -24,6 +26,7 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        builder.Services.AddSingleton<BackgroundService>();
         builder.Services.AddTransient<MainPage, MainPageViewModel>();
 
 		return builder.Build();

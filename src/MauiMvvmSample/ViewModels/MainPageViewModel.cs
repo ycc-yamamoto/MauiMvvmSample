@@ -2,11 +2,16 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using MauiMvvmSample.Services;
 
 namespace MauiMvvmSample.ViewModels;
 
 public sealed partial class MainPageViewModel : ObservableObject
 {
+    private readonly BackgroundService backgroundService;
+
     [ObservableProperty]
     private TimeSpan since = TimeSpan.Zero;
 
@@ -23,6 +28,16 @@ public sealed partial class MainPageViewModel : ObservableObject
 
     [ObservableProperty]
     private DateTime profileBirthday = DateTime.Today;
+
+    public MainPageViewModel(BackgroundService backgroundService)
+    {
+        this.backgroundService = backgroundService;
+        WeakReferenceMessenger.Default.Register<ValueChangedMessage<TimeSpan>>(this, (_, message) =>
+        {
+            this.Since = message.Value;
+        });
+        this.backgroundService.Start(TimeSpan.FromSeconds(1));
+    }
 
     public string UpperCaseText => this.InputText.ToUpperInvariant();
 
