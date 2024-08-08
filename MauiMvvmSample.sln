@@ -11,6 +11,9 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		DEV|Any CPU = DEV|Any CPU
+		STG|Any CPU = STG|Any CPU
+		PROD|Any CPU = PROD|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -19,9 +22,15 @@ Global
 		{C579AB90-99CB-42DA-A082-0E99FB67F63D} = {1DC46CFB-53A3-4F79-826E-C360646CE988}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.DEV|Any CPU.ActiveCfg = DEV|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.DEV|Any CPU.Build.0 = DEV|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.STG|Any CPU.ActiveCfg = STG|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.STG|Any CPU.Build.0 = STG|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.PROD|Any CPU.ActiveCfg = PROD|Any CPU
+		{C579AB90-99CB-42DA-A082-0E99FB67F63D}.PROD|Any CPU.Build.0 = PROD|Any CPU
 	EndGlobalSection
 EndGlobal

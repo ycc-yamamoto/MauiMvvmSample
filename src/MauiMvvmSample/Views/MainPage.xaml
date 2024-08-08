@@ -4,12 +4,15 @@
              xmlns:vm="using:MauiMvvmSample.ViewModels"
              xmlns:controls="using:MauiMvvmSample.Controls"
              x:Class="MauiMvvmSample.Views.MainPage"
-             x:DataType="vm:MainPageViewModel">
+             x:DataType="vm:MainPageViewModel"
+             Title="{Binding Path=Title, Mode=OneWay}">
 
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+            <Label Text="{Binding Path=Host, Mode=OneWay, StringFormat='Host: {0}'}"/>
+
             <Label Text="{Binding Path=Since, Mode=OneWay, StringFormat='Time since launch: {0:%s} sec'}"/>
 
             <Entry Text="{Binding Path=InputText, Mode=TwoWay}"
